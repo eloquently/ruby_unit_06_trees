@@ -120,7 +120,7 @@ end
 # in case of a tie, choose an arbitrary node -- the tests won't cover this
 # case
 
-def closest_match_bst(root, key, value)
+def closest_match_bst(root, key)
 end
 
 # this method returns true if a tree is a binary search tree, otherwise it
