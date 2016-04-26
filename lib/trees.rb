@@ -20,6 +20,9 @@ end
 # should print:
 # 124536
 def pre_order(root)
+    print root.value
+    pre_order(root.left) if root.left
+    pre_order(root.right) if root.right
 end
 
 # print the tree's in_order traversal
@@ -33,6 +36,9 @@ end
 # should print:
 # 425163
 def in_order(root)
+    in_order(root.left) if root.left
+    print root.value
+    in_order(root.right) if root.right
 end
 
 # print the tree's post_order traversal
@@ -46,6 +52,9 @@ end
 # should print:
 # 452631
 def post_order(root)
+    post_order(root.left) if root.left
+    post_order(root.right) if root.right
+    print root.value
 end
 
 # return the number of levels in the tree
@@ -60,6 +69,12 @@ end
 
 # should return 3
 def height(root)
+    return 0 if root.nil?
+
+    left_height = height(root.left)
+    right_height = height(root.right)
+
+    return [left_height, right_height].max + 1
 end
 
 # print the tree's level_order traversal
@@ -100,6 +115,14 @@ end
 # 3   5  10
 
 def search_bst(root, key)
+    return nil if root.nil?
+    if key < root.key
+        return search_bst(root.left, key)
+    elsif key > root.key
+        return search_bst(root.right, key)
+    elsif root.key == key
+        return root.value
+    end
 end
 
 # insert a new key/value pair into the binary search tree
@@ -112,4 +135,13 @@ end
 # 3      10        3   7 10
 
 def insert_into_bst(root, key, value)
+    return Node.new(key: key, value: value) if root.nil?
+
+    if key < root.key
+        root.left = insert_into_bst(root.left, key, value)
+    elsif key > root.key
+        root.right = insert_into_bst(root.right, key, value)
+    end
+
+    return root
 end
