@@ -58,7 +58,7 @@ end
 #       /
 #      7
 
-# should return 3
+# should return 4
 def height(root)
 end
 
