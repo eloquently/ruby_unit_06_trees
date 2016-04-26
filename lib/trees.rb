@@ -145,3 +145,18 @@ def insert_into_bst(root, key, value)
 
     return root
 end
+
+# this method searches a binary search tree to find the
+# value of the node with the key that is closest to the specified key
+# (similar to search_bst but we no longer need an exact match)
+# in case of a tie, choose an arbitrary node -- the tests won't cover this
+# case
+
+def closest_match_bst(root, key, value)
+end
+
+# this method returns true if a tree is a binary search tree, otherwise it
+# returns false
+
+def is_bst?(root)
+end

@@ -27,9 +27,9 @@ describe Node do
     let(:bst1) do
         root = Node.new(key: 8, value: 'a')
         root.left = Node.new(key: 4, value: 'b')
-        root.right = Node.new(key: 15, value: 'c')
         root.left.left = Node.new(key: 3, value: 'd')
         root.left.right = Node.new(key: 5, value: 'e')
+        root.right = Node.new(key: 15, value: 'c')
         root.right.left = Node.new(key: 10, value: 'f')
         root
     end
@@ -86,6 +86,23 @@ describe Node do
             expect(bst1.left.right.right.value).to eq('new')
             insert_into_bst(bst1, 9, 'newer')
             expect(bst1.right.left.left.value).to eq('newer')
+        end
+    end
+
+    describe '#closest_match_bst' do
+        it 'returns answer' do
+            expect(closest_match_bst(bst1, 1)).to eq('d')
+            expect(closest_match_bst(bst1, 12)).to eq('f')
+        end
+    end
+
+    describe '#is_bst?' do
+        it 'returns answer' do
+            expect(is_bst?(bst1)).to eq(true)
+            insert_into_bst(bst1, 7, 'new')
+            expect(is_bst?(bst1)).to eq(true)
+
+            expect(is_bst?(basic)).to eq(false)
         end
     end
 end
