@@ -72,6 +72,13 @@ describe Node do
         end
     end
 
+    describe '#is_bst?' do
+        it 'returns answer' do
+            expect(is_bst?(bst1)).to eq(true)
+            expect(is_bst?(basic)).to eq(false)
+        end
+    end
+
     describe '#search_bst' do
         it 'returns answer' do
             expect(search_bst(bst1, 10)).to eq('f')
@@ -93,16 +100,6 @@ describe Node do
         it 'returns answer' do
             expect(closest_match_bst(bst1, 1)).to eq('d')
             expect(closest_match_bst(bst1, 12)).to eq('f')
-        end
-    end
-
-    describe '#is_bst?' do
-        it 'returns answer' do
-            expect(is_bst?(bst1)).to eq(true)
-            insert_into_bst(bst1, 7, 'new')
-            expect(is_bst?(bst1)).to eq(true)
-
-            expect(is_bst?(basic)).to eq(false)
         end
     end
 end
