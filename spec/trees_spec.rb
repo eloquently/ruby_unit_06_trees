@@ -57,6 +57,7 @@ describe Node do
         it 'returns answer' do
             expect(height(basic)).to eq(3)
             expect(height(tall)).to eq(6)
+            expect(height(Node.new(key: 1))).to eq(1)
         end
     end
 

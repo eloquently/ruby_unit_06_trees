@@ -67,7 +67,7 @@ end
 #       /
 #      7
 
-# should return 3
+# should return 4
 def height(root)
     return 0 if root.nil?
 
