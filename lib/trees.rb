@@ -93,6 +93,10 @@ end
 
 # this method returns true if a tree is a binary search tree, otherwise it
 # returns false
+
+# a binary tree is a BST if and only if each element has the following property:
+# the key of the node is greater than the keys of all nodes in its left subtree
+# and the key is less than all the keys of its right sub-tree
 def is_bst?(root)
 end
 
