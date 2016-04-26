@@ -102,4 +102,10 @@ describe Node do
             expect(closest_match_bst(bst1, 12)).to eq('f')
         end
     end
+
+    describe '#build_tree' do
+        it 'returns answer' do
+            expect{pre_order(build_tree('425163'.split(''),'452631'.split('')))}.to output('124536').to_stdout
+        end
+    end
 end
